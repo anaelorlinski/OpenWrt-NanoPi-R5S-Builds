@@ -6,6 +6,10 @@ if [ ! -e "$ROOTDIR/build" ]; then
     exit 1
 fi
 
+# disable kmods build for now
+exit 0
+
+
 cd "$ROOTDIR/build"
 
 cd openwrt
