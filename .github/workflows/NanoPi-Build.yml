@@ -24,32 +24,22 @@ on:
       openwrt_branch:
         description: 'OpenWrt Branch to build'     
         required: true
-        default: '22.03'
+        default: '23.04'
         type: choice
         options:
-        - '21.02'
-        - '22.03'
-        - 'master'
-      model_R4S:
-        description: 'Build R4S'
+        - '23.04'
+      model_R5S:
+        description: 'Build R5S'
         type: boolean
         default: true
-      model_R2S:
-        description: 'Build R2S'
-        type: boolean
-        default: true
-      model_R2C:
-        description: 'Build R2C'
-        type: boolean
-        default: false
       build_mini:
         description: 'Build mini seed'
         type: boolean
-        default: false
+        default: true
       build_full:
         description: 'Build full seed'
         type: boolean
-        default: true
+        default: false
 jobs:
   init:
     runs-on: ubuntu-22.04
@@ -67,10 +57,8 @@ jobs:
       run: echo "release_tag=$(date +%Y%m%d)" >> $GITHUB_OUTPUT
     - id: build_matrix
       run: |
-          model_R4S="${{ fromJSON('["", "R4S"]')[github.event.inputs.model_R4S == 'true'] }}"
-          model_R2S="${{ fromJSON('["", "R2S"]')[github.event.inputs.model_R2S == 'true'] }}"
-          model_R2C="${{ fromJSON('["", "R2C"]')[github.event.inputs.model_R2C == 'true' && (github.event.inputs.openwrt_branch == '21.02' || github.event.inputs.openwrt_branch == '22.03')] }}"
-          models="$model_R4S $model_R2S $model_R2C"
+          model_R5S="${{ fromJSON('["", "R5S"]')[github.event.inputs.model_R5S == 'true'] }}"
+          models="$model_R5S"
           modelsJson=$(echo -n "$models" | jq -R -s -c 'split(" ") | map(select(length>0))')
           matrix="{\"nanopi_model\":$modelsJson}"
           echo "matrix=$matrix" >> $GITHUB_OUTPUT
