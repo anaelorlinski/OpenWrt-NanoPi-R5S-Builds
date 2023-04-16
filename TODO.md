@@ -1,3 +1,3 @@
 # TODOS
 
-- check video.mk
+- check video.mk / cleanup rockchip DRM ?

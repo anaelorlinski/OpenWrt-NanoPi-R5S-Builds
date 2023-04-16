@@ -27,8 +27,10 @@ cp -R ../stangri_repo/luci-app-pbr feeds/luci/applications/
 # replace acme & haproxy with newer versions taken from master
 #rm -rf feeds/packages/net/acme*
 #cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/acme* feeds/packages/net/
-#rm -rf feeds/packages/net/haproxy
-#cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/haproxy* feeds/packages/net/
+
+# replace haproxy with package with fix for optimized arm compilation
+rm -rf feeds/packages/net/haproxy
+cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/haproxy* feeds/packages/net/
 
 # replace adguardhome with prebuilt latest version
 rm -rf feeds/packages/net/adguardhome
