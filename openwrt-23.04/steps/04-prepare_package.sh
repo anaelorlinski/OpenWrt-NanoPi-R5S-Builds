@@ -11,22 +11,18 @@ OPENWRT_BRANCH=23.04
 cd "$ROOTDIR/build"
 
 # clone stangri repo
-#rm -rf stangri_repo
-#uboot-rockchipgit clone https://github.com/stangri/source.openwrt.melmac.net stangri_repo
+rm -rf stangri_repo
+git clone https://github.com/stangri/source.openwrt.melmac.net stangri_repo
 
 # install feeds
 cd openwrt
 ./scripts/feeds update -a
 
-# replace vpn routing packages
-#rm -rf feeds/packages/net/vpn-policy-routing/
-#cp -R ../stangri_repo/vpn-policy-routing feeds/packages/net/
-#rm -rf feeds/luci/applications/luci-app-vpn-policy-routing
-#cp -R ../stangri_repo/luci-app-vpn-policy-routing feeds/luci/applications/
-
-# add pbr
-#cp -R ../stangri_repo/pbr feeds/packages/net/
-#cp -R ../stangri_repo/luci-app-pbr feeds/luci/applications/
+# replace pbr packages
+rm -rf feeds/packages/net/pbr/
+cp -R ../stangri_repo/pbr feeds/packages/net/
+rm -rf feeds/luci/applications/luci-app-pbr
+cp -R ../stangri_repo/luci-app-pbr feeds/luci/applications/
 
 # replace acme & haproxy with newer versions taken from master
 #rm -rf feeds/packages/net/acme*
@@ -35,8 +31,8 @@ cd openwrt
 #cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/haproxy* feeds/packages/net/
 
 # replace adguardhome with prebuilt latest version
-#rm -rf feeds/packages/net/adguardhome
-#cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/adguardhome feeds/packages/net/
+rm -rf feeds/packages/net/adguardhome
+cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/adguardhome feeds/packages/net/
 
 ./scripts/feeds update -i && ./scripts/feeds install -a
 

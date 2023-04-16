@@ -6,7 +6,7 @@
 ### Configuration
 - OpenWRT 23.04 Vanilla / Kernel 5.15
 - ImmortalWRT patches for Rockchip target NanoPi R5S (rk3568)
-- NanoPi R4S : r8168 driver for R4S (realtek) instead of kernel r8169 + r8169 firmwares package
+- NanoPi R5S : r8125 Realtek driver
 
 ### Applications
 - A useful set of applications from official OpenWrt package feed
@@ -16,4 +16,5 @@
 - pbr latest version from https://github.com/stangri/source.openwrt.melmac.net
 
 ### Changelog
+- [2023-04-16] Re-add some disabled features and packages
 - [2023-04-10] Initial build
