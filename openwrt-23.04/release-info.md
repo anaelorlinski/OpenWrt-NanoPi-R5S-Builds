@@ -16,5 +16,6 @@
 - pbr latest version from https://github.com/stangri/source.openwrt.melmac.net
 
 ### Changelog
+- [2023-04-25] Update patches and enable hdmi console
 - [2023-04-16] Re-add some disabled features and packages
 - [2023-04-10] Initial build
