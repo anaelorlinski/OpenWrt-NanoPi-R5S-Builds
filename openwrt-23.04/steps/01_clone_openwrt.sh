@@ -18,4 +18,4 @@ git clone --single-branch https://git.openwrt.org/openwrt/openwrt.git $OPENWRT_F
 
 cd $OPENWRT_FOLDER
 echo "Current OpenWRT commit"
-git log -1
+git rev-parse HEAD

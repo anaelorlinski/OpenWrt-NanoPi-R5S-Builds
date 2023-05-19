@@ -42,11 +42,11 @@ cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/adguardhome feeds/package
 MANUAL_DATE="$(date +%Y.%m.%d) (manual build)"
 BUILD_STRING=${BUILD_STRING:-$MANUAL_DATE}
 echo "Write build date in openwrt : $BUILD_DATE"
-echo -e '\nAO Build@'${BUILD_STRING}'\n'  >> package/base-files/files/etc/banner
+echo -e '\nAgilicus Build@'${BUILD_STRING}'\n'  >> package/base-files/files/etc/banner
 #sed -i '/DISTRIB_REVISION/d' package/base-files/files/etc/openwrt_release
 #echo "DISTRIB_REVISION='${BUILD_STRING}'" >> package/base-files/files/etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' package/base-files/files/etc/openwrt_release
-echo "DISTRIB_DESCRIPTION='AO Build@${BUILD_STRING}'" >> package/base-files/files/etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='Agilicus Build@${BUILD_STRING}'" >> package/base-files/files/etc/openwrt_release
 #sed -i '/luciversion/d' feeds/luci/modules/luci-base/luasrc/version.lua
 
 rm -rf .config

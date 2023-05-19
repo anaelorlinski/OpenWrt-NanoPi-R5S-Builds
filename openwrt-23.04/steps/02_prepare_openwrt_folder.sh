@@ -15,8 +15,7 @@ cd openwrt
 #git reset --hard 94adc23fa693d1b129ce1718573dfb12594f20f8
 
 echo "Current OpenWRT commit"
-git log -1
-git describe
+git rev-parse HEAD
 
 # install feeds
 # cd openwrt
