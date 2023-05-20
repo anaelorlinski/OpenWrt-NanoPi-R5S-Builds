@@ -17,7 +17,11 @@ make defconfig
 
 rm -rf bin/
 rm -rf files/ipks/
-let make_process=$(nproc)+1
+#let make_process=$(nproc)+1
+
+make_process=$(echo -e "$(nproc)\n64" | sort -nk1 | head -1)
+
+set +x
 
 # compile toolchain if not built yet
 make toolchain/install -j${make_process} || { make toolchain/install -j 1 V=s ; exit 1 ; }
@@ -32,7 +36,7 @@ make package/ucert/host/compile V=s || exit 1
 make package/base-files/configure V=s || exit 1
 
 # sign packages
-make package/index V=s || exit 1
+make package/index || exit 1
 mkdir -p files/ipks
 cd files/ipks
 find ../../bin/targets/rockchip/armv8/packages/ -type f -exec ln {} . \;

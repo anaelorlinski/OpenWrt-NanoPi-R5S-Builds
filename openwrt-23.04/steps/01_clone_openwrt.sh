@@ -19,3 +19,7 @@ git clone --single-branch https://git.openwrt.org/openwrt/openwrt.git $OPENWRT_F
 cd $OPENWRT_FOLDER
 echo "Current OpenWRT commit"
 git rev-parse HEAD
+
+# (cd package; git clone https://github.com/jerrykuku/luci-theme-argon.git)
+# (cd package; git clone https://github.com/jerrykuku/luci-app-argon-config)
+# (cd package; git clone https://github.com/muink/luci-app-netdata)

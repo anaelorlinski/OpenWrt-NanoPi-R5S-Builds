@@ -1,0 +1,11 @@
+--- /home/don/src-ag/don/openwrt-nanopi-r5s/build/openwrt/build_dir/target-aarch64_generic_musl/linux-rockchip_armv8/realtek-r8125-dkms-9.010.01-2/src/Makefile.orig	2023-05-20 10:43:01.700568350 -0400
++++ /home/don/src-ag/don/openwrt-nanopi-r5s/build/openwrt/build_dir/target-aarch64_generic_musl/linux-rockchip_armv8/realtek-r8125-dkms-9.010.01-2/src/Makefile	2023-05-20 10:43:21.717392801 -0400
+@@ -50,6 +50,8 @@
+ DISABLE_PM_SUPPORT = n
+ DISABLE_MULTI_MSIX_VECTOR = n
+ 
++CFLAGS += -Wno-error=implicit-fallthrough
++
+ ifneq ($(KERNELRELEASE),)
+ 	obj-m := r8125.o
+ 	r8125-objs := r8125_n.o rtl_eeprom.o rtltool.o

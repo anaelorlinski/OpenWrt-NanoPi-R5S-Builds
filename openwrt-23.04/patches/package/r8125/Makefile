@@ -34,7 +34,7 @@ define KernelPackage/r8125/description
 endef
 
 define Build/Compile
-	+$(KERNEL_MAKE) M=$(PKG_BUILD_DIR)/src modules
+	+$(KERNEL_MAKE) M=$(PKG_BUILD_DIR)/src EXTRA_CFLAGS=-Wno-error=implicit-fallthrough modules
 endef
 
 $(eval $(call KernelPackage,r8125))
