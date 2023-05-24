@@ -1,0 +1,35 @@
+
+. /lib/functions/leds.sh
+. /lib/functions/uci-defaults.sh
+
+board=$(board_name)
+boardname="${board##*,}"
+
+board_config_update
+
+case $board in
+friendlyarm,nanopi-r2c|\
+friendlyarm,nanopi-r2c-plus|\
+friendlyarm,nanopi-r2s|\
+friendlyarm,nanopi-r4s|\
+friendlyarm,nanopi-r4se|\
+friendlyarm,nanopi-r4s-enterprise|\
+xunlong,orangepi-r1-plus|\
+xunlong,orangepi-r1-plus-lts)
+	ucidef_set_led_netdev "wan" "WAN" "green:wan" "eth0"
+	ucidef_set_led_netdev "lan" "LAN" "green:lan" "eth1"
+	;;
+friendlyarm,nanopi-r5c)
+	ucidef_set_led_netdev "wan" "WAN" "green:wan" "eth1"
+	ucidef_set_led_netdev "lan" "LAN" "green:lan" "eth0"
+	;;
+friendlyarm,nanopi-r5s)
+	ucidef_set_led_netdev "wan" "WAN" "green:wan" "eth0"
+	ucidef_set_led_netdev "lan1" "LAN1" "green:lan1" "eth1"
+	ucidef_set_led_netdev "lan2" "LAN2" "green:lan2" "eth2"
+	;;
+esac
+
+board_config_flush
+
+exit 0

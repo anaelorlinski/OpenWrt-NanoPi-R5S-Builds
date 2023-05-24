@@ -24,10 +24,10 @@ on:
       openwrt_branch:
         description: 'OpenWrt Branch to build'     
         required: true
-        default: '23.04'
+        default: '23.05'
         type: choice
         options:
-        - '23.04'
+        - '23.05'
       model_R5S:
         description: 'Build R5S'
         type: boolean
