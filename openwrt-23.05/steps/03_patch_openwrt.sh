@@ -9,7 +9,7 @@ fi
 BUILDDIR="$ROOTDIR/build"
 
 cd "$BUILDDIR/openwrt"
-OPENWRT_BRANCH=23.04
+OPENWRT_BRANCH=23.05
 
 # -------------- UBOOT -----------------------------------
 # replace uboot with local uboot package

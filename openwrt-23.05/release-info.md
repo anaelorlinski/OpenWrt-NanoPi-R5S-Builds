@@ -1,10 +1,10 @@
-## OpenWrt 23.04 (beta)
+## OpenWrt 23.05 (beta)
 
 ### General Info
-- Based of openwrt 23.04 branch
+- Based of openwrt 23.05 branch
 
 ### Configuration
-- OpenWRT 23.04 Vanilla / Kernel 5.15
+- OpenWRT 23.05 Vanilla / Kernel 5.15
 - ImmortalWRT patches for Rockchip target NanoPi R5S (rk3568)
 - NanoPi R5S : r8125 Realtek driver
 

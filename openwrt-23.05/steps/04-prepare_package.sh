@@ -6,7 +6,7 @@ if [ ! -e "$ROOTDIR/build" ]; then
     exit 1
 fi
 
-OPENWRT_BRANCH=23.04
+OPENWRT_BRANCH=23.05
 
 cd "$ROOTDIR/build"
 

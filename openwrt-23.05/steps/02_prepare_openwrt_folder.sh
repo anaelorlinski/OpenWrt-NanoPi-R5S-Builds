@@ -8,7 +8,7 @@ fi
 
 cd "$ROOTDIR/build"
 
-cp -R openwrt-fresh-23.04 openwrt
+cp -R openwrt-fresh-23.05 openwrt
 
 # freeze revision to 22.03.4
 cd openwrt
