@@ -96,6 +96,15 @@ define Device/friendlyarm_nanopi-r5s
 endef
 TARGET_DEVICES += friendlyarm_nanopi-r5s
 
+define Device/huake_guangmiao-g4c
+  DEVICE_VENDOR := Huake-Cloud
+  DEVICE_MODEL := GuangMiao G4C
+  SOC := rk3399
+  BOOT_FLOW := pine64-bin
+  DEVICE_PACKAGES := kmod-r8168
+endef
+TARGET_DEVICES += huake_guangmiao-g4c
+
 define Device/lunzn_fastrhino-r66s
   DEVICE_VENDOR := Lunzn
   DEVICE_MODEL := FastRhino R66S
@@ -132,6 +141,15 @@ define Device/radxa_rock-pi-4a
   BOOT_FLOW := pine64-bin
 endef
 TARGET_DEVICES += radxa_rock-pi-4a
+
+define Device/radxa_rock-pi-e
+  DEVICE_VENDOR := Radxa
+  DEVICE_MODEL := ROCK Pi E
+  SOC := rk3328
+  SUPPORTED_DEVICES := radxa,rockpi-e
+  BOOT_FLOW := pine64-bin
+endef
+TARGET_DEVICES += radxa_rock-pi-e
 
 define Device/xunlong_orangepi-r1-plus
   DEVICE_VENDOR := Xunlong

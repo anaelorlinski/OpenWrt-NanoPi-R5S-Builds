@@ -6,11 +6,11 @@
 	smbios {
 		smbios {
 			system {
-				product = "NanoPi R4S Enterprise Edition";
+				product = "NanoPi R4SE";
 			};
 
 			baseboard {
-				product = "NanoPi R4S Enterprise Edition";
+				product = "NanoPi R4SE";
 			};
 		};
 	};
