@@ -12,7 +12,7 @@ cp -R openwrt-fresh-23.05 openwrt
 
 # freeze revision to 23.05.0-rc2
 cd openwrt
-#git reset --hard 94adc23fa693d1b129ce1718573dfb12594f20f8
+git reset --hard 55ae516f61fa9d38a5080630795070a8e6673088
 
 echo "Current OpenWRT commit"
 git log -1

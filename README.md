@@ -6,7 +6,7 @@ Automated builds of OpenWrt for FriendlyARM NanoPi R5S boards
 If you like this project you can gift me a coffee !
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?business=8XQTGXAHEAKPY&no_recurring=0&currency_code=EUR)
 
-## OpenWrt 23.05 (beta)
+## OpenWrt 23.05
 
 [Download 23.05 Releases](https://github.com/anaelorlinski/OpenWrt-NanoPi-R5S-Builds/releases?q=OpenWrtAO-23.05&expanded=true) [Changelog](https://github.com/anaelorlinski/OpenWrt-NanoPi-R5S-Builds/blob/main/openwrt-23.05/release-info.md)
 Supported Models : R5S
