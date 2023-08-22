@@ -1,7 +1,7 @@
 ## OpenWrt 23.05 (beta)
 
 ### General Info
-- Based of openwrt 23.05.0-rc2
+- Based of openwrt 23.05.0-rc3
 
 ### Configuration
 - OpenWRT 23.05 Vanilla / Kernel 5.15
