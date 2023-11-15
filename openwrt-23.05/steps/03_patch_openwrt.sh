@@ -39,10 +39,8 @@ cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/target/linux/rockchip target/linu
 cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/r8125 package/kernel/
 
 # enable armv8 crypto for mbedtls
-#cp $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/mbedtls/patches/100-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch \
-#   package/libs/mbedtls/patches/
-rm -rf package/libs/mbedtls
-cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/mbedtls package/libs/
+cp $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/mbedtls/patches/200-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch \
+   package/libs/mbedtls/patches/
 
 # video modules
 rm -rf package/kernel/linux/modules/video.mk
