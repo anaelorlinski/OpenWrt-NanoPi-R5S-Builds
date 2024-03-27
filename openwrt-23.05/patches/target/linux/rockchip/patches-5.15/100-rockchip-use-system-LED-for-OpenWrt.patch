@@ -128,15 +128,35 @@ Signed-off-by: David Bauer <mail@david-bauer.net>
  	};
  
  	chosen {
-@@ -55,7 +60,7 @@
+@@ -55,10 +60,9 @@
  		pinctrl-0 = <&led_pin>;
  		pinctrl-names = "default";
  
 -		led-0 {
+-			color = <LED_COLOR_ID_BLUE>;
 +		status_led: led-0 {
- 			color = <LED_COLOR_ID_BLUE>;
++			label = "blue:status";
  			gpios = <&gpio3 RK_PA5 GPIO_ACTIVE_LOW>;
- 			linux,default-trigger = "heartbeat";
+-			linux,default-trigger = "heartbeat";
+ 		};
+ 	};
+ 
+--- a/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopc-t4.dts
+@@ -15,6 +15,13 @@
+ 	model = "FriendlyElec NanoPC-T4";
+ 	compatible = "friendlyarm,nanopc-t4", "rockchip,rk3399";
+ 
++	aliases {
++		led-boot = &status_led;
++		led-failsafe = &status_led;
++		led-running = &status_led;
++		led-upgrade = &status_led;
++	};
++
+ 	vcc12v0_sys: vcc12v0-sys {
+ 		compatible = "regulator-fixed";
+ 		regulator-always-on;
 --- a/arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts
 +++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts
 @@ -19,6 +19,13 @@
@@ -169,6 +189,18 @@ Signed-off-by: David Bauer <mail@david-bauer.net>
  	chosen: chosen {
  		stdout-path = "serial2:1500000n8";
  	};
+@@ -32,10 +39,8 @@
+ 		pinctrl-0 = <&status_led_pin>;
+ 
+ 		status_led: led-status {
+-			color = <LED_COLOR_ID_BLUE>;
+-			function = LED_FUNCTION_STATUS;
++			label = "blue:status";
+ 			gpios = <&gpio0 RK_PC0 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "heartbeat";
+ 		};
+ 	};
+ 
 --- a/arch/arm64/boot/dts/rockchip/rk3568-nanopi-r5c.dts
 +++ b/arch/arm64/boot/dts/rockchip/rk3568-nanopi-r5c.dts
 @@ -32,27 +32,22 @@
@@ -253,3 +285,54 @@ Signed-off-by: David Bauer <mail@david-bauer.net>
  	};
  
  	chosen: chosen {
+--- a/arch/arm64/boot/dts/rockchip/rk3568-roc-pc.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3568-roc-pc.dts
+@@ -19,6 +19,11 @@
+ 		ethernet1 = &gmac1;
+ 		mmc0 = &sdmmc0;
+ 		mmc1 = &sdhci;
++
++		led-boot = &power_led;
++		led-failsafe = &power_led;
++		led-running = &power_led;
++		led-upgrade = &power_led;
+ 	};
+ 
+ 	chosen: chosen {
+@@ -50,15 +55,17 @@
+ 
+ 	leds {
+ 		compatible = "gpio-leds";
++		pinctrl-names = "default";
++		pinctrl-0 = <&power_led_pin>, <&user_led_pin>;
++
++		power_led: led-power {
++			label = "red:power";
++			gpios = <&gpio1 RK_PB1 GPIO_ACTIVE_HIGH>;
++		};
+ 
+ 		led-user {
+-			label = "user-led";
+-			default-state = "on";
++			label = "blue:user";
+ 			gpios = <&gpio1 RK_PB2 GPIO_ACTIVE_HIGH>;
+-			linux,default-trigger = "heartbeat";
+-			pinctrl-names = "default";
+-			pinctrl-0 = <&user_led_enable_h>;
+-			retain-state-suspended;
+ 		};
+ 	};
+ 
+@@ -490,7 +497,11 @@
+ 
+ &pinctrl {
+ 	leds {
+-		user_led_enable_h: user-led-enable-h {
++		power_led_pin: power-led-pin {
++			rockchip,pins = <1 RK_PB1 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++
++		user_led_pin: user-led-pin {
+ 			rockchip,pins = <1 RK_PB2 RK_FUNC_GPIO &pcfg_pull_none>;
+ 		};
+ 	};
