@@ -1,7 +1,7 @@
 ## OpenWrt 23.05
 
 ### General Info
-- Based of openwrt 23.05.2
+- Based of openwrt 23.05.3
 
 ### Configuration
 - OpenWRT 23.05 Vanilla / Kernel 5.15
@@ -17,6 +17,7 @@
 - pbr latest version from https://github.com/stangri/source.openwrt.melmac.net
 
 ### Changelog
+- [2024-03-27] OpenWrt 23.05.3
 - [2023-11-15] OpenWrt 23.05.2
 - [2023-10-13] Freeze to 23.05.0
 - [2023-10-03] Freeze to 23.05.0-rc4
