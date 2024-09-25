@@ -35,9 +35,6 @@ cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/target/linux/rockchip target/linu
 
 # ------------------ packages ------------------------------------
 
-# r8125 driver for r5s
-cp -R $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/r8125 package/kernel/
-
 # enable armv8 crypto for mbedtls
 cp $ROOTDIR/openwrt-$OPENWRT_BRANCH/patches/package/mbedtls/patches/200-Implements-AES-and-GCM-with-ARMv8-Crypto-Extensions.patch \
    package/libs/mbedtls/patches/
