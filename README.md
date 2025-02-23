@@ -1,11 +1,11 @@
 # OpenWrt Builds for NanoPi R5S
 
+# Project is now DEPRECATED since OpenWrt provides native support for NanoPi R5S
+Thank you for support and contributions. There will be no 24.10 updates.
+
 Automated builds of OpenWrt for FriendlyARM NanoPi R5S boards
 
 [![NanoPi Build](https://github.com/anaelorlinski/OpenWrt-NanoPi-R5S-Builds/actions/workflows/NanoPi-Build.yml/badge.svg)](https://github.com/anaelorlinski/OpenWrt-NanoPi-R5S-Builds/actions/workflows/NanoPi-Build.yml)
-
-If you like this project you can gift me a coffee !
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?business=8XQTGXAHEAKPY&no_recurring=0&currency_code=EUR)
 
 ## OpenWrt 23.05
 
